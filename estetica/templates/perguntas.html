@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGPD Center - Autoavaliação</title>
+    <link rel="stylesheet" href="/estetica/style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">
+                    <img src="/logos/logo1.jpeg" alt="Logo">
+                </div>
+                <h2>LGPD Center</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="/empresa">🏢 Cadastro da Empresa</a>
+                <a href="/guia">📖 Guia Educativo</a>
+                <a href="/perguntas" class="active">📋 Autoavaliação</a>
+                <a href="/dashboard">📊 Visão Geral</a>
+                <a href="/risco">⚠️ Risco e Maturidade</a>
+                <a href="/relatorio">📄 Relatório Final</a>
+                <a href="/privacidade">🔒 Aviso de Privacidade</a>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+            <div class="topbar">
+                <div class="badge-mini">
+                    <img src="/logos/logo1.jpeg" alt="Mini Logo">
+                    <span>LGPD / Autoavaliação</span>
+                </div>
+                <div class="header-title">
+                    <h1>Módulo de Autoavaliação</h1>
+                    <p>Responda aos questionários divididos por áreas para medir o nível de adequação da empresa à LGPD.</p>
+                </div>
+            </div>
+
+            <!-- FILTRO DE ÁREAS -->
+            <div class="card full-width" style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+                <div>
+                    <h3>Filtrar por Setor / Área</h3>
+                    <p class="card-desc">Selecione uma área específica ou visualize todas as perguntas.</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <select id="select-area" onchange="carregarPerguntasPorArea()" style="padding: 10px 14px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #f8fafc; font-size: 0.9rem; outline: none; cursor: pointer;">
+                        <option value="Todas">Todas as Áreas</option>
+                        <option value="Geral">Geral</option>
+                        <option value="Recursos Humanos (RH)">Recursos Humanos (RH)</option>
+                        <option value="Segurança da Informação / TI">Segurança da Informação / TI</option>
+                        <option value="Financeiro">Financeiro</option>
+                        <option value="Atendimento / Comercial">Atendimento / Comercial</option>
+                    </select>
+                    <span id="progresso-texto" style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">0 de 24 respondidas</span>
+                </div>
+            </div>
+
+            <!-- LISTA DE PERGUNTAS -->
+            <div id="perguntas">
+                <!-- Carregado via script.js -->
+            </div>
+        </main>
+    </div>
+
+    <script src="/estetica/script.js"></script>
+    <script>
+        window.onload = function() {
+            carregarPerguntasPorArea();
+        };
+    </script>
+</body>
+
+</html>

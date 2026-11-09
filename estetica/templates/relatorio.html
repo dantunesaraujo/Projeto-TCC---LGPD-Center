@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGPD Center - Relatório Consolidado</title>
+    <link rel="stylesheet" href="/estetica/style.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="brand">
+                <div class="logo"><img src="/logos/logo1.jpeg" alt="Logo"></div>
+                <h2>LGPD Center</h2>
+            </div>
+            <div class="menu">
+                <a href="/empresa">Dados da Empresa</a>
+                <a href="/guia">Guia Educativo</a>
+                <a href="/perguntas">Autoavaliação</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/risco">Indicador de Risco</a>
+                <a href="/relatorio" class="active">Relatório Final</a>
+                <a href="/privacidade">Aviso de Privacidade</a>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <div class="topbar">
+                <div class="badge-mini"><img src="/logos/logo2.jpeg" alt="User"> LGPD / Relatório Final</div>
+                <div class="header-title">
+                    <h1>Relatório Consolidado e Recomendações</h1>
+                    <p>Visão geral dos dados da empresa, índice de conformidade apurado e plano de ação direcionado.</p>
+                </div>
+            </div>
+
+            <!-- Dados da Empresa -->
+            <div class="card" style="margin-bottom: 20px;">
+                <h3>Dados da Organização</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;">
+                    <div><strong>Empresa:</strong> <span id="rel_nome">-</span></div>
+                    <div><strong>CNPJ:</strong> <span id="rel_cnpj">-</span></div>
+                    <div><strong>Responsável / DPO:</strong> <span id="rel_responsavel">-</span></div>
+                    <div><strong>E-mail:</strong> <span id="rel_email">-</span></div>
+                </div>
+            </div>
+
+            <!-- BLOCO 1 (EM CIMA): Índice Geral de Conformidade -->
+            <div class="card" style="margin-bottom: 20px;">
+                <h3>Índice Geral Obtido</h3>
+                <div style="font-size: 2.5rem; font-weight: bold; margin: 10px 0;" id="rel_indice_geral">0%</div>
+                <p>Status apurado com base em todas as respostas registradas no questionário de autoavaliação.</p>
+            </div>
+
+            <!-- BLOCO 2 (EMBAIXO): Recomendações & Plano de Ação Ocupando Toda a Largura -->
+            <div class="card" style="margin-bottom: 20px;">
+                <h3>Recomendações & Plano de Ação</h3>
+                <div id="rel_planos_acao" style="margin-top: 10px;">
+                    <!-- O script injeta o conteúdo aqui dinamicamente de forma expandida -->
+                </div>
+            </div>
+
+            <!-- Desempenho Detalhado por Área -->
+            <div class="card" style="margin-bottom: 20px;">
+                <h3>Desempenho Detalhado por Área</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #334155; text-align: left;">
+                            <th style="padding: 8px;">Área / Setor</th>
+                            <th style="padding: 8px;">Respostas Preenchidas</th>
+                            <th style="padding: 8px;">Índice de Conformidade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rel_tabela_areas">
+                        <!-- Injetado via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Botão de Impressão -->
+            <div style="margin-top: 20px; text-align: right;">
+                <button onclick="window.print()" class="btn-primary">Imprimir / Salvar Relatório (PDF)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/estetica/script.js"></script>
+    <script>
+        window.onload = function() {
+            carregarRelatorioFinal();
+        };
+    </script>
+</body>
+</html>

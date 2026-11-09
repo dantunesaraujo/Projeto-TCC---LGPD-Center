@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGPD Center - Visão Geral do Diagnóstico</title>
+    <link rel="stylesheet" href="/estetica/style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">
+                    <img src="/logos/logo1.jpeg" alt="Logo">
+                </div>
+                <h2>LGPD Center</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="/empresa">🏢 Cadastro da Empresa</a>
+                <a href="/guia">📖 Guia Educativo</a>
+                <a href="/perguntas">📋 Autoavaliação</a>
+                <a href="/dashboard" class="active">📊 Visão Geral</a>
+                <a href="/risco">⚠️ Indicador de Risco</a>
+                <a href="/relatorio">📄 Relatório Final</a>
+                <a href="/privacidade">🔒 Aviso de Privacidade</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <div class="badge-mini">
+                    <img src="/logos/logo1.jpeg" alt="Mini Logo">
+                    <span>LGPD / Visão Geral</span>
+                </div>
+                <div class="header-title">
+                    <h1>Visão Geral do Diagnóstico</h1>
+                    <p>Acompanhe em tempo real o andamento e o status global da avaliação de conformidade.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Progresso Total</h3>
+                    <p class="card-desc">Status geral de preenchimento dos questionários.</p>
+                    <h2 id="progresso-total-num" style="font-size: 2rem; color: #38bdf8; margin-top: 10px;">0% (0/24)</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Pontuação Acumulada</h3>
+                    <p class="card-desc">Atendimento consolidado dos requisitos.</p>
+                    <h2 id="pontuacao-num" style="font-size: 2rem; color: #4ade80; margin-top: 10px;">0.0%</h2>
+                </div>
+
+                <div class="card full-width">
+                    <h3>Pontuação Detalhada por Área</h3>
+                    <p class="card-desc" style="margin-bottom: 20px;">Desempenho individual por setor avaliado no sistema.</p>
+                    <div id="pontuacao-por-area"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/estetica/script.js"></script>
+    <script>
+        window.onload = function() {
+            carregarVisaoGeral();
+        };
+    </script>
+</body>
+
+</html>

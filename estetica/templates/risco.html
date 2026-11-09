@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGPD Center - Indicador de Risco</title>
+    <link rel="stylesheet" href="/estetica/style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">
+                    <img src="/logos/logo1.jpeg" alt="Logo">
+                </div>
+                <h2>LGPD Center</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="/empresa">🏢 Cadastro da Empresa</a>
+                <a href="/guia">📖 Guia Educativo</a>
+                <a href="/perguntas">📋 Autoavaliação</a>
+                <a href="/dashboard">📊 Visão Geral</a>
+                <a href="/risco" class="active">⚠️ Indicador de Risco</a>
+                <a href="/relatorio">📄 Relatório Final</a>
+                <a href="/privacidade">🔒 Aviso de Privacidade</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <div class="badge-mini">
+                    <img src="/logos/logo1.jpeg" alt="Mini Logo">
+                    <span>LGPD / Indicador de Risco</span>
+                </div>
+                <div class="header-title">
+                    <h1>Indicador de Risco</h1>
+                    <p>Visualize os resultados da avaliação, identifique lacunas e priorize oportunidades de melhoria em proteção de dados.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card full-width">
+                    <h3>Índice Geral de Conformidade</h3>
+                    <p class="card-desc" style="margin-bottom: 16px;">Percentual de atendimento aos requisitos avaliados na empresa.</p>
+                    <!-- CANVAS COM ALTURA FIXA E PROPORÇÃO CORRETA -->
+                    <canvas id="grafico" style="width: 100%; height: 44px; display: block; border-radius: 8px;"></canvas>
+                </div>
+
+                <div class="card">
+                    <h3>Classificação de Conformidade</h3>
+                    <p class="card-desc">Identifique o nível de atendimento da empresa aos requisitos de proteção de dados.</p>
+                    <div class="classificacao-list" style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+                        <div class="classificacao-item" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background-color: rgba(15, 23, 42, 0.5); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                            <span style="font-size: 1.2rem;">🔴</span>
+                            <div><strong>0% a 25%</strong><br><span style="font-size: 0.82rem; color: #94a3b8;">Maturidade inicial</span></div>
+                        </div>
+                        <div class="classificacao-item" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background-color: rgba(15, 23, 42, 0.5); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                            <span style="font-size: 1.2rem;">🟠</span>
+                            <div><strong>25,01% a 50%</strong><br><span style="font-size: 0.82rem; color: #94a3b8;">Maturidade básica</span></div>
+                        </div>
+                        <div class="classificacao-item" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background-color: rgba(15, 23, 42, 0.5); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                            <span style="font-size: 1.2rem;">🟡</span>
+                            <div><strong>50,01% a 75%</strong><br><span style="font-size: 0.82rem; color: #94a3b8;">Maturidade intermediária</span></div>
+                        </div>
+                        <div class="classificacao-item" style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background-color: rgba(15, 23, 42, 0.5); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                            <span style="font-size: 1.2rem;">🟢</span>
+                            <div><strong>75,01% a 100%</strong><br><span style="font-size: 0.82rem; color: #94a3b8;">Maturidade avançada</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Categorias Avaliadas</h3>
+                    <p class="card-desc">As categorias agrupam os requisitos por tema e permitem visualizar em quais controles estão concentradas as principais lacunas de conformidade.</p>
+                    <div style="margin-top: 20px; padding: 16px; background-color: rgba(15, 23, 42, 0.6); border-radius: 10px; border: 1px solid #334155;">
+                        <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                            * Elas facilitam a identificação de prioridades de adequação técnica e administrativa sem alterar a pontuação global atribuída às respostas do questionário.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/estetica/script.js"></script>
+    <script>
+        window.onload = function() {
+            gerarGrafico();
+        };
+    </script>
+</body>
+
+</html>

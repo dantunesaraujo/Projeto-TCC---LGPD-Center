@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGPD Center - Cadastro da Empresa</title>
+    <link rel="stylesheet" href="/estetica/style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">
+                    <img src="/logos/logo1.jpeg" alt="Logo">
+                </div>
+                <h2>LGPD Center</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="/empresa" class="active">🏢 Cadastro da Empresa</a>
+                <a href="/guia">📖 Guia Educativo</a>
+                <a href="/perguntas">📋 Autoavaliação</a>
+                <a href="/dashboard">📊 Visão Geral</a>
+                <a href="/risco">⚠️ Indicador de Risco</a>
+                <a href="/relatorio">📄 Relatório Final</a>
+                <a href="/privacidade">🔒 Aviso de Privacidade</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <div class="badge-mini">
+                    <img src="/logos/logo1.jpeg" alt="Mini Logo">
+                    <span>LGPD / Cadastro da Empresa</span>
+                </div>
+                <div class="header-title">
+                    <h1>Cadastro da Empresa</h1>
+                    <p>Preencha os dados cadastrais para personalizar sua experiência e identificar sua empresa nos relatórios gerados pelo sistema.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card full-width">
+                    <h3>Dados da Empresa</h3>
+                    <p class="card-desc" style="margin-bottom: 20px;">Estes dados são associados ao seu perfil de acesso e aparecerão nos relatórios oficiais do sistema.</p>
+                    
+                    <form onsubmit="salvarEmpresa(event)">
+                        <div class="form-group">
+                            <label for="emp_nome">Nome da Empresa</label>
+                            <input type="text" id="emp_nome" placeholder="Razão Social ou Nome Fantasia">
+                        </div>
+                        <div class="form-group">
+                            <label for="emp_cnpj">CNPJ</label>
+                            <input type="text" id="emp_cnpj" placeholder="00.000.000/0000-00">
+                        </div>
+                        <div class="form-group">
+                            <label for="emp_responsavel">Responsável LGPD / DPO</label>
+                            <input type="text" id="emp_responsavel" placeholder="Nome do Responsável">
+                        </div>
+                        <div class="form-group">
+                            <label for="emp_email">E-mail de Contato</label>
+                            <input type="email" id="emp_email" placeholder="contato@empresa.com.br">
+                        </div>
+
+                        <div style="display: flex; gap: 12px; align-items: center; margin-top: 24px;">
+                            <button type="submit" class="btn-primary">Atualizar Cadastro</button>
+                            <a href="/privacidade" class="btn-secondary">Aviso de Privacidade</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/estetica/script.js"></script>
+    <script>
+        window.onload = function() {
+            carregarEmpresa();
+        };
+    </script>
+</body>
+
+</html>
